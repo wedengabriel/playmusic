@@ -55,58 +55,56 @@ class _DashboardPageState
     return Scaffold(
 
       appBar: AppBar(
-
-      title: const Text(
-        "🎵 PlayMusic",
-      ),
-
-      actions:[
-
-        IconButton(
-          icon: const Icon(
-            Icons.bar_chart,
-          ),
-
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) {
-                  return StatisticsPage(
-                    total: musicas.length,
-                  );
-                },
-              ),
-            );
-          },
+        title: const Text(
+          "🎵 PlayMusic",
         ),
 
-        IconButton(
-
-          icon:
-          const Icon(
-            Icons.info,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.bar_chart,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) {
+                    return StatisticsPage(
+                      total: musicas.length,
+                    );
+                  },
+                ),
+              );
+            },
           ),
 
-          onPressed:(){
+          IconButton(
+            icon: Icon(
+              widget.temaEscuro
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+            onPressed: () {
+              widget.alternarTema();
+            },
+          ),
 
-            Navigator.push(
-
-              context,
-
-              MaterialPageRoute(
-
-                builder:(_){
-
-                  return const
-                  AboutPage();
-
-                },
-              ),
-            );
-          },
-        ),
-      ],
+          IconButton(
+            icon: const Icon(
+              Icons.info,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) {
+                    return const AboutPage();
+                  },
+                ),
+              );
+            },
+          ),
+        ],
       ),
 
       body: Padding(
