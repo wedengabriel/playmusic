@@ -27,6 +27,7 @@ class _DashboardPageState
 
   List todasMusicas = [];
   String pesquisa = "";
+  String generoFiltro = "Todos";
 
   carregar() async {
 
@@ -201,6 +202,102 @@ class _DashboardPageState
                       }
 
                   ).toList();
+
+                });
+
+              },
+            ),
+
+            const SizedBox(
+              height:20,
+            ),
+
+            DropdownButtonFormField(
+
+              value: generoFiltro,
+
+              decoration:
+              const InputDecoration(
+                labelText:
+                "Filtrar gênero",
+              ),
+
+              items: const [
+
+                DropdownMenuItem(
+                  value:"Todos",
+                  child:
+                  Text("Todos"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Sertanejo",
+                  child:
+                  Text("Sertanejo"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Funk",
+                  child:
+                  Text("Funk"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Pagode",
+                  child:
+                  Text("Pagode"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Forró",
+                  child:
+                  Text("Forró"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Rap",
+                  child:
+                  Text("Rap"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Pop",
+                  child:
+                  Text("Pop"),
+                ),
+
+              ],
+
+              onChanged:(valor){
+
+                setState(() {
+
+                  generoFiltro =
+                  valor!;
+
+                  if(
+                  generoFiltro
+                  ==
+                  "Todos"
+                  ){
+
+                    musicas =
+                    todasMusicas;
+
+                  }else{
+
+                    musicas =
+                    todasMusicas.where(
+                    (m){
+
+                      return
+                      m['genero']
+                      ==
+                      generoFiltro;
+
+                    }).toList();
+
+                  }
 
                 });
 

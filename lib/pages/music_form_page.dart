@@ -22,6 +22,8 @@ class _MusicFormPageState
   final artista = TextEditingController();
   final album = TextEditingController();
 
+  String generoSelecionado = "Pop";
+
   @override
   void initState() {
     super.initState();
@@ -46,7 +48,7 @@ class _MusicFormPageState
       titulo: titulo.text,
       artista: artista.text,
       album: album.text,
-      genero: "Pop",
+      genero: generoSelecionado,
       humor: "Animada",
       duracao: 3.5,
       nota: 5,
@@ -122,6 +124,85 @@ class _MusicFormPageState
               const InputDecoration(
                 labelText: "Álbum",
               ),
+            ),
+
+            const SizedBox(
+              height:20,
+            ),
+
+            DropdownButtonFormField(
+
+              value: generoSelecionado,
+
+              decoration:
+              const InputDecoration(
+                labelText: "Gênero",
+              ),
+
+              items: const [
+
+                DropdownMenuItem(
+                  value:"Sertanejo",
+                  child: Text("Sertanejo"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Funk",
+                  child: Text("Funk"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Pagode",
+                  child: Text("Pagode"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Forró",
+                  child: Text("Forró"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Trap",
+                  child: Text("Trap"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Rap",
+                  child: Text("Rap"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Gospel",
+                  child: Text("Gospel"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Pop",
+                  child: Text("Pop"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Rock",
+                  child: Text("Rock"),
+                ),
+
+                DropdownMenuItem(
+                  value:"Eletrônica",
+                  child: Text("Eletrônica"),
+                ),
+
+              ],
+
+              onChanged:(valor){
+
+                setState(() {
+
+                  generoSelecionado =
+                  valor!;
+
+                });
+
+              },
             ),
 
             const SizedBox(
