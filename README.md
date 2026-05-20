@@ -113,6 +113,42 @@ O projeto pode ser executado em diferentes plataformas:
 
 ---
 
+## 📦 Versões compiladas
+
+As versões compiladas do projeto podem ser geradas para facilitar testes e execução da aplicação sem a necessidade de abrir o ambiente de desenvolvimento Flutter.
+
+Para gerar os arquivos compilados utilize os seguintes comandos:
+
+### Windows
+
+```bash
+flutter build windows
+```
+
+Arquivo gerado em:
+
+```text
+build/windows/x64/runner/Release/
+```
+
+### Android
+
+```bash
+flutter build apk --release
+```
+
+Arquivo gerado em:
+
+```text
+build/app/outputs/flutter-apk/
+```
+
+---
+
+As compilações foram geradas e testadas durante o desenvolvimento do projeto.
+
+---
+
 ## 🔗 GitHub
 
 https://github.com/desyreegarcia/playmusic
