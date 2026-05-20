@@ -1,0 +1,11 @@
+Windows:
+flutter build windows
+
+Arquivo gerado em:
+build/windows/x64/runner/Release/
+
+Android:
+flutter build apk --release
+
+Arquivo gerado em:
+build/app/outputs/flutter-apk/
